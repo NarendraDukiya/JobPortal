@@ -50,5 +50,11 @@
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.1",
     "vite": "^6.2.0"
+  },
+  "resolutions": {
+    "**/@rollup/rollup-linux-x64-gnu": "0.0.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
   }
 }

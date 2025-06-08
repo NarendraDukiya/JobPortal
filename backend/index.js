@@ -15,13 +15,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:'http://localhost:5173',
+    origin:'https://jobportal-fronted-dz9i.onrender.com',
     credentials:true
 };
 app.use(cors(corsOptions));
 
 
-const PORT = https://jobportal-fronted-dz9i.onrender.com/;
+const PORT = https://jobportal-fronted-dz9i.onrender.com;
 
 // api's
 app.use("/api/v1/user",userRoute);

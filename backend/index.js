@@ -10,6 +10,14 @@ import applicationRoute from "./routes/application.route.js";
 dotenv.config({});
 
 const app = express();
+
+// Middleware to set Content Security Policy header
+app.use((req, res, next) => {
+    res.setHeader("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src-elem 'self' https://fonts.googleapis.com;");
+    next();
+});
+
+
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));

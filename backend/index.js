@@ -13,18 +13,18 @@ const app = express();
 
 // Middleware to set Content Security Policy header
 app.use((req, res, next) => {
-    res.setHeader("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src-elem 'self' https://fonts.googleapis.com;");
+    res.setHeader("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src-elem https://fonts.googleapis.com");
     next();
 });
-
 
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:'https://jobportal-fronted-dz9i.onrender.com',
-    credentials:true
+    origin: 'https://jobportal-fronted-dz9i.onrender.com',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'Access-Control-Allow-Origin']
 };
 app.use(cors(corsOptions));
 
